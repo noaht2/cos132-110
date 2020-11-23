@@ -2,10 +2,31 @@
 using namespace std;
 struct Node {
    int data;
-   struct Node *next;
+   Node *next;
 };
 
 Node* head = nullptr;
+
+int list_size() {
+  Node *current = nullptr;
+   int size = 0;
+   
+   if(head==NULL) {
+      printf("List size : %d ", size);
+      return 0;
+   } 
+
+   current = head;
+   size = 1;
+
+   while(current->next != head) {
+      current = current->next;
+      size++;
+   }
+
+   return size;  
+}
+
 void insert(int newdata) {
    Node *newnode = new Node;
    Node *ptr = head;
@@ -27,13 +48,28 @@ void display() {
       ptr = ptr->next;
    } while(ptr != head);
 }
+
+void getHead() {
+  cout << head->data << endl;
+}
+
+void getFirstNode() {
+  Node *nodePtr;
+  nodePtr = head;
+  
+  int size = list_size();
+  for(int i = 0; i < size-1; i++) {
+    nodePtr = nodePtr->next;
+  }
+  cout << nodePtr->data << endl;
+}
+
 int main() {
-   insert(3);
-   insert(1);
-   insert(7);
-   insert(2);
-   insert(9);
-   cout<<"The circular linked list is: ";
-   display();
+  insert(3);
+  insert(1);
+  insert(7);
+  insert(2);
+  insert(9);
+  getFirstNode();
    return 0;
 }
