@@ -13,8 +13,7 @@ Node *front = NULL;
 Node *rear = NULL;
 
 //Function to check if queue is empty or not
-bool isempty()
-{
+bool isempty() {
  if(front == NULL && rear == NULL)
  return true;
  else
@@ -22,15 +21,13 @@ bool isempty()
 }
 
 //function to enter elements in queue
-void enqueue ( int value )
-{
+void enqueue ( int value ) {
  Node *ptr = new Node();
  ptr->data= value;
  ptr->link = NULL;
 
  //If inserting the first element/node
- if( front == NULL )
- {
+ if( front == NULL ) {
   front = ptr;
   rear = ptr;
  }
@@ -42,8 +39,7 @@ void enqueue ( int value )
 }
 
 //function to delete/remove element from queue
-void dequeue ( )
-{
+void dequeue () {
  if( isempty() )
  cout<<"Queue is empty\n";
  else
