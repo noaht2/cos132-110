@@ -3,8 +3,7 @@
 #include<cstdlib>
 using namespace std;
 
-struct node
-{
+struct node { 
     int value;
     struct node* next;
     struct node* prev;
