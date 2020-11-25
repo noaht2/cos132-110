@@ -5,36 +5,30 @@ using namespace std;
 int A[SIZE];
 int top = -1;
 
-bool isempty()
-{
+bool isempty() { // checks wether is empty or not
   if(top==-1)
   return true;
   else
   return false;
 }
 
-void push(int value)
-{
-  if(top==SIZE-1)
-  {    cout<<"Stack is full!\n";
-  }
-   else
-  {
+void push(int value) { // adds to stack
+  if(top==SIZE-1) {    
+    cout<<"Stack is full!\n";
+  } else {
     top++;
     A[top]=value;
   }
 }
 
-void pop()
-{
+void pop() { // removes from stack
  if(isempty())
   cout<<"Stack is empty!\n";
  else
   top--;
 }
 
-void show_top()
-{
+void show_top() { // shows top most element in stack
  if(isempty())
   cout<<"Stack is empty!\n";
  else
@@ -42,44 +36,16 @@ void show_top()
 
 }
 
-void displayStack()
-{
-  if(isempty())
- {
+void displayStack() {
+  if(isempty()) {
     cout<<"Stack is empty!\n";
- }
- else
- {
+ } else {
   for(int i=0 ; i<=top; i++)
     cout<<A[i]<<" ";
    cout<<"\n";
-
   }
-
 }
 
-int main()
-{
+int main() {
 
- int choice, flag=1, value;
- while( flag == 1)
- {
- cout<<"\n1.PUSH 2.POP 3.SHOW_TOP 4.DISPLAY_STACK 5.EXIT\n";
- cin>>choice; switch (choice)
- {
- case 1: cout<<"Enter Value:\n";
-         cin>>value;
-         push(value);
-         break;
- case 2: pop();
-         break;
- case 3: show_top();
-         break;
- case 4: displayStack();
-         break;
- case 5: flag = 0;
-         break;
- }
- }
-  return 0;
 }
